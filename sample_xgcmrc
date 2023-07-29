@@ -1,0 +1,63 @@
+[lua]
+
+    --  a simple test function for verifying that
+    --  lua functions are callable from xgcm tags
+
+    print_test = function ()
+        return "test successful!"
+    end
+
+    -- for printing a table's values nicely
+
+    function table_tostring( tbl )
+      local result = ""
+      local count = 0
+      for k, v in ipairs( tbl ) do
+        if string.len(result) ~= 0 then
+            result = result .. ", "
+        end
+        result = result .. v
+        count = count + 1
+      end
+      return result 
+    end
+
+[xgcm]
+    files = ./
+ 
+    file_extension = "xgcm"
+    tempdir_path = "/tmp/xgcm/"
+    tempfile_prefix = "TEMP_"
+
+    multiline_divider = " "
+
+    include =
+        ./sample_xgcmrc_2
+
+[attributes]
+    tool_name = xgcm
+    tool_pronunciation = Ziggy see em
+
+    contributors =
+        Adjective-Object
+        Maybe you?
+
+
+    multiple_assignment_test = 
+        Multiple
+        Assignment
+        Test
+        This
+        Value
+        Should
+        Be
+        The
+        Last
+        Thing
+        In
+        The
+        List
+        Multiple Assignment Test Successful!
+    
+    color1 = #333333
+    color2 = #444444

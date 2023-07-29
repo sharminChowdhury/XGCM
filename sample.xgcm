@@ -1,0 +1,65 @@
+; This is a sample ini file to show how xgcm could be used
+; to configure colors in a .Xresources file.
+
+{[~ xgcm_output_path("./sample_output")]}
+
+lua_fn_test:   {[ print_test() ]}
+
+lua_darken_test {[ lab_lumdiff(red, -1.2) ]}
+
+multiple_assignment_test: {[ multiple_assignment_test ]}
+
+rgba_foreground: {[ rgba_comma_repr(foreground) ]}
+
+lua_select_test_darker: {[ lab_select_lum(color1, color2, false) ]}
+lua_select_test_lighter: {[ lab_select_lum(color1, color2, true) ]}
+
+setting x to 20... {[~ x = 20]}
+x = {[x]}
+
+!-------------------------
+! terminal colors 
+!-------------------------
+
+*.foreground:   {[ foreground ]}
+*.background:   {[ background ]}
+*.cursorColor:  {[ foreground ]}
+
+*.color0:       {[ black ]}
+*.color8:       {[ bright_black ]}
+
+*.color1:       {[ red ]}
+*.color9:       {[ bright_red ]}
+
+*.color2:       {[ green ]}
+*.color10:      {[ bright_green ]}
+
+*.color3:       {[ yellow ]}
+*.color11:      {[ bright_yellow ]}
+
+*.color4:       {[ blue ]}
+*.color12:      {[ bright_blue ]}
+
+*.color5:       {[ magenta ]}
+*.color13:      {[ bright_magenta ]}
+
+*.color6:       {[ cyan ]}
+*.color14:      {[ bright_cyan ]}
+
+*.color7:       {[ white ]}
+*.color15:      {[ bright_white ]}
+
+!-------------------------
+! dtools 
+!-------------------------
+
+dzen2.font: 			{[ font_tiny ]}
+dzen2.background:		{[ background ]}
+dzen2.foreground: 		{[ foreground ]}
+
+
+dmenu.font:  			{[ font_tiny ]}
+dmenu*background: 		{[ background ]}
+dmenu*foreground:		{[ foreground ]}
+dmenu*selforeground:    {[ blue ]}
+dmenu*selbackground:   	{[ bright_white ]}
